@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     overflow-x: hidden;
 }
 
@@ -19,7 +19,7 @@
         margin-left: 10vw;
 
         .logoImage {
-            width: 50px;
+            width: 6vh;
         }
     }
 
@@ -61,10 +61,8 @@
             #instagramLogo {
                 font-size: 20px;
             }
-
         }
     }
-
 }
 
 .underNav {
@@ -75,22 +73,25 @@
 
     .underNavImage {
         height: 100%;
-        background: linear-gradient(to bottom, rgba(92, 77, 66, 0.65) 0%, rgba(92, 77, 66, 0.65) 100%), url(../../immagini/modificate/immaginePieve.png);
+        background: linear-gradient(
+                to bottom,
+                rgba(92, 77, 66, 0.65) 0%,
+                rgba(92, 77, 66, 0.65) 100%
+            ),
+            url(../../immagini/modificate/immaginePieve.png);
         background-size: cover;
         background-position-x: 40%;
     }
-
 }
 
-.underNav:before {
+.underNav::before {
     content: "";
     position: absolute;
     top: 0;
     width: 100vw;
     height: 8vh;
-    background: rgba(255, 255, 255, 1);
+    background: rgb(255, 255, 255);
 }
-
 
 @media only screen and(max-width:998px) {
     .navbar {
@@ -98,9 +99,9 @@
         grid-template-columns: 1fr 1fr;
 
         .navbarMenuSocial {
-            animation: ease-in-out .3s;
+            animation: ease-in-out 0.3s;
             transform: translateX(100%);
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 1);
             width: 100vw;
             justify-content: space-around;
             display: none;
@@ -143,25 +144,23 @@
             right: 0;
             margin-right: 10vw;
             cursor: pointer;
-            height: 30px;
-            width: 27px;
-
-            div {
-                content: "";
-                margin-top: 4px;
-                height: 3px;
-                width: 100%;
-                background-color: black;
-
-
-            }
-
-            .line2 {
-                width: 90%;
-                margin-left: auto;
-                margin-right: auto;
+            height: 100%;
+            width: 17%;
+            .burgerLines {
+                height: 100%;
+                align-items: center;
+                display: grid;
+                grid-template-rows: 5px 1fr 1fr 1fr 5px;
+                div {
+                    content: "";
+                    height: 1px;
+                    width: 100%;
+                    background-color: black;
+                }
+                .line1 {
+                    grid-row: 2/3;
+                }
             }
         }
-
     }
 }
